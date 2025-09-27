@@ -1,0 +1,60 @@
+.KnowledgeBasePage {
+  padding-top: 92px;
+}
+
+.KnowledgeBasePage .heading {
+  padding: 40px 0;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  color: #212121;
+}
+
+.KnowledgeBasePage .row .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 83px;
+}
+
+.KnowledgeBasePage .inner_box {
+  border-radius: 16px;
+  padding: 42px;
+  width: 385px;
+  flex: 20rem;
+  height: 250px;
+  background: rgba(25, 55, 186, 0.06);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.KnowledgeBasePage .inner_box .title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.KnowledgeBasePage .inner_box .text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 12px;
+}
+
+.KnowledgeBasePage .inner_box .arrow_right {
+  stroke-width: 2px;
+  stroke: #1937ba;
+  width: 21px;
+  height: 20px;
+}

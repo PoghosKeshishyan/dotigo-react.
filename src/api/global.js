@@ -21,8 +21,8 @@ export const getTopLevelDomains = async () => {
 
 export const getDomains = async (title) => {
     try {
-        const res = await fetch('http://localhost:8000/domains?title='+title);
-        return res.json();
+        const res = await axios.get(`global/domains?title=${title}`)
+        return res.data;
     } catch (error) {
         console.log(error);
     }

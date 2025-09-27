@@ -60,15 +60,15 @@ export default function HostingPlans({ hostingPlansHeading, hostingPlans, billin
                 {plan.price} <span>{plan.billing}</span>
               </p>
 
-              <a href="#" className="btn">
+              <button href="#" className="btn">
                 {
                   DISPLAY_LANG === 'en'
-                    ? 'Choose Plan'
+                    ? 'Add to cart'
                     : DISPLAY_LANG === 'ru'
-                      ? 'Выбрать план'
-                      : 'Ընտրեք Փաթեթը'
+                      ? 'Добавить в корзину'
+                      : 'Ավելացնել զամբյուղում'
                 }
-              </a>
+              </button>
             </div>
           ))
         }

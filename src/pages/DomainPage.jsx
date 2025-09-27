@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { DISPLAY_LANG } from '../config';
 import { getDomainPageData } from '../api/domain-page';
 import { getDomains } from "../api/global";
@@ -13,6 +13,7 @@ export default function DomainPage() {
     const [currentDomains, setCurrentDomains] = useState(null);
     const [isWarningShow, setIsWarningShow] = useState(false);
     const [searchedDomain, setSearchedDomain] = useState(sessionStorage.getItem('searched-domain') || '');
+    const inputRef = useRef(null);
 
     useEffect(() => {
         const loadingData = async () => {
@@ -30,6 +31,12 @@ export default function DomainPage() {
         loadingData();
         window.scrollTo(0, 0);
     }, []);
+
+    useEffect(() => {
+        if (!loading && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [loading]);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -52,7 +59,7 @@ export default function DomainPage() {
 
             <div className="content">
                 <form className="search-domain-form" onSubmit={onSubmit}>
-                    <input type="search" required value={searchedDomain} onChange={e => setSearchedDomain(e.target.value)} />
+                    <input type="search" required ref={inputRef} value={searchedDomain} onChange={e => setSearchedDomain(e.target.value)} />
                     <input type="submit" className="btn" value={pageData.btn_text[DISPLAY_LANG]} />
                 </form>
 

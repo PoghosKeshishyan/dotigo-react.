@@ -1,4 +1,4 @@
-const DISPLAY_LANG = 'en';
+const DISPLAY_LANG = 'am';
 
 export {
     DISPLAY_LANG,

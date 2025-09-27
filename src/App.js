@@ -3,8 +3,12 @@ import { Route, Routes } from "react-router-dom";
 import { DISPLAY_LANG } from './config';
 import Header from "./components/header";
 import HomePage from "./pages/HomePage";
+import { KnowledgeBasePage } from "./pages/KnowledgeBasePage";
+import { KnowledgeBaseArticle } from "./pages/KnowledgeBaseArticle";
+import { KnowledgeBaseDetailPage } from "./pages/KnowledgeBaseDetailPage";
 import DomainPage from "./pages/DomainPage";
 import HostingPage from "./pages/HostingPage";
+import VPSPage from "./pages/VPSPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
 import Footer from "./components/footer";
@@ -36,8 +40,12 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
+        <Route path="/knowledge-base/:id" element={<KnowledgeBaseArticle />} />
+        <Route path="/knowledge-base-detail/:category_id" element={<KnowledgeBaseDetailPage />}/>
         <Route path="/domain" element={<DomainPage />} />
         <Route path="/hosting" element={<HostingPage />} />
+        <Route path="/vps" element={<VPSPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>

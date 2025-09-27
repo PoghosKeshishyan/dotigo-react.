@@ -14,7 +14,7 @@ export default function Intro({ introData }) {
     const onSubmit = (event) => {
         event.preventDefault();
         sessionStorage.setItem('searched-domain', input);
-        navigate('/domains-register');
+        navigate('/domain');
     };
 
     return (

@@ -17,7 +17,7 @@ export default function HostingPage() {
   useEffect(() => {
     const loadingData = async () => {
       const data = await getHostingPageData();
-      setHostingHeading(data.heading[0]);
+      setHostingHeading(data.heading);
       setQuestionData(data.question);
     };
 

@@ -1,9 +1,9 @@
-// import axios from "../axios";
+import axios from "../axios";
 
 export const getDomainPageData = async () => {
     try {
-        const res = await fetch('http://localhost:8000/domain_page');
-        return res.json();
+        const res = await axios.get('domain/domain_page');
+        return res.data;
     } catch (error) {
         console.log(error);
     }

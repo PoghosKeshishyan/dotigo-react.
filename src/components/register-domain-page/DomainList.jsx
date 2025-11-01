@@ -13,29 +13,30 @@ export default function DomainList({ currentDomains }) {
 
   return (
     <div className="domain-list">
-      {currentDomains.map((elem) => (
-        <div key={elem.id} className="domain-item flex-between">
-          <p className="domain-title">{elem.title}</p>
+      {currentDomains
+        .filter(elem => elem.status === 'available')
+        .map((elem, idx) => (
+          <div key={idx} className="domain-item flex-between">
+            <p className="domain-title">{elem.domain}</p>
 
-          <div className="buy flex-center">
-            <div className="price-box">
-              <span className="old-price">{elem.old_price}</span>
-              <span className="price">{elem.price}</span>
+            <div className="buy flex-center">
+              <div className="price-box">
+                <span className="price">Դ {elem.yearly_price}</span>
+              </div>
+
+              <img
+                src={
+                  cartStatus[elem.id]
+                    ? "/images/partials/cart-checked.svg"
+                    : "/images/partials/cart.svg"
+                }
+                alt={elem.title}
+                onClick={() => toggleCart(elem.id)}
+                className="btn"
+              />
             </div>
-
-            <img
-              src={
-                cartStatus[elem.id]
-                  ? "/images/partials/cart-checked.svg"
-                  : "/images/partials/cart.svg"
-              }
-              alt={elem.title}
-              onClick={() => toggleCart(elem.id)}
-              className="btn"
-            />
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }

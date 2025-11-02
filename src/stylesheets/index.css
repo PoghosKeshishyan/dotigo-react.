@@ -55,6 +55,16 @@ body {
     overflow-x: hidden;
 }
 
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
 .am-font * {
   font-family: 'Arial Regular' !important;
 }

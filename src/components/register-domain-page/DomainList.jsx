@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import './DomainList.css';
 
 export default function DomainList({ currentDomains }) {
   const [cartStatus, setCartStatus] = useState({});
+  const { addDomainToCart } = useContext(CartContext);
 
-  const toggleCart = (id) => {
+  const toggleCart = (elem) => {
     setCartStatus((prev) => ({
       ...prev,
-      [id]: !prev[id]
+      [elem.id]: !prev[elem.id]
     }));
+
+    addDomainToCart(elem);
   };
 
   return (
@@ -21,7 +25,7 @@ export default function DomainList({ currentDomains }) {
 
             <div className="buy flex-center">
               <div className="price-box">
-                <span className="price">Դ {elem.yearly_price}</span>
+                <span className="price">{elem.yearly_price} ֏</span>
               </div>
 
               <img
@@ -31,7 +35,7 @@ export default function DomainList({ currentDomains }) {
                     : "/images/partials/cart.svg"
                 }
                 alt={elem.title}
-                onClick={() => toggleCart(elem.id)}
+                onClick={() => toggleCart(elem)}
                 className="btn"
               />
             </div>

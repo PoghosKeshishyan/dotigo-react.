@@ -11,6 +11,7 @@ import HostingPage from "./pages/HostingPage";
 import VPSPage from "./pages/VPSPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from './pages/RegisterPage';
+import CartPage from "./pages/CartPage";
 import Footer from "./components/footer";
 import axios from "./axios";
 
@@ -38,18 +39,21 @@ export default function App() {
     <div className={`App ${DISPLAY_LANG === 'am' ? 'am-font' : ''}`}>
       {headerData && <Header headerData={headerData} />}
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
-        <Route path="/knowledge-base/:id" element={<KnowledgeBaseArticle />} />
-        <Route path="/knowledge-base-detail/:category_id" element={<KnowledgeBaseDetailPage />}/>
-        <Route path="/domain" element={<DomainPage />} />
-        <Route path="/hosting" element={<HostingPage />} />
-        <Route path="/vps" element={<VPSPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-      </Routes>
-
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
+          <Route path="/knowledge-base/:id" element={<KnowledgeBaseArticle />} />
+          <Route path="/knowledge-base-detail/:category_id" element={<KnowledgeBaseDetailPage />} />
+          <Route path="/domain" element={<DomainPage />} />
+          <Route path="/hosting" element={<HostingPage />} />
+          <Route path="/vps" element={<VPSPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </main>
+      
       {footerData && <Footer footerData={footerData} />}
     </div>
   )

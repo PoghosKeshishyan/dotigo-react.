@@ -145,7 +145,7 @@ header .icons img {
 }
 
 /* ============ media queries ============ */
-@media (max-width: 1050px) {
+@media (max-width: 1110px) {
     header .account-buttons {
         display: none;
     }

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Navbar({ navbar, navbarIsActive }) {
+export default function Navbar({ navbar, navbarIsActive, setNavbarIsActive }) {
     const [openDropdownId, setOpenDropdownId] = useState(null);
     const navRef = useRef();
 
@@ -37,13 +37,13 @@ export default function Navbar({ navbar, navbarIsActive }) {
                         key={item.id}
                         onClick={(e) => toggleDropdown(e, item.id, hasDropdown)}
                     >
-                        <NavLink to={item.link}>
+                        <NavLink to={item.link} onClick={() => setNavbarIsActive(false)}>
                             {item.label}
                             {hasDropdown && <img src="/images/partials/arrow.svg" alt="arrow" />}
                         </NavLink>
 
                         {hasDropdown && isOpen && (
-                            <ul className="dropdown" onClick={(e) => e.stopPropagation()}>
+                            <ul className="dropdown" onClick={(e) => {e.stopPropagation()}}>
                                 {item.dropdown.map(sub => (
                                     <li key={sub.id}>
                                         <NavLink to={sub.link}>{sub.label}</NavLink>

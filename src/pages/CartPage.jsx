@@ -7,9 +7,13 @@ import CartList from '../components/cart-page/CartList';
 import '../stylesheets/cart.css';
 
 export default function CartPage() {
-    const { orders } = useContext(CartContext);
+    const { 
+        orders, increaseAmount, decreaseAmount, 
+        removeDomainFromCart, total 
+    } = useContext(CartContext);
+    
     const [loading, setLoading] = useState(true);
-    const [cartEmptyData, setCartEmptyData] = useState('');
+    const [cartEmptyData, setCartEmptyData] = useState(null);
     const [cartPageData, setCartPageData] = useState(null);
 
     useEffect(() => {
@@ -22,8 +26,6 @@ export default function CartPage() {
 
         loadingData();
         window.scrollTo(0, 0);
-        console.log(orders);
-        
     }, []);
 
     if (loading) {
@@ -34,7 +36,17 @@ export default function CartPage() {
         <div className="CartPage wrapper">
             <div className="content">
                 {!orders.length && <p className='cart-empty-message'>{cartEmptyData[DISPLAY_LANG]}</p>}
-                {cartPageData && <CartList orders={orders} pagedata={cartPageData} />}
+                
+                {cartPageData && !!orders.length && (
+                    <CartList 
+                      orders={orders} 
+                      pagedata={cartPageData} 
+                      increaseAmount={increaseAmount}
+                      removeDomainFromCart={removeDomainFromCart}
+                      decreaseAmount={decreaseAmount}
+                      total={total} 
+                    />
+                )}
             </div>
         </div>
     )

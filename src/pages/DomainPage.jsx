@@ -7,11 +7,6 @@ import TopLevelDomains from '../components/top-level-domains';
 import DomainList from "../components/register-domain-page/DomainList";
 import '../stylesheets/domain.css';
 
-
-
-/**================ @karzinki_logic_dzel ======== */
-
-
 export default function DomainPage() {
     const [loading, setLoading] = useState(true);
     const [pageData, setPageData] = useState(null);
@@ -47,9 +42,11 @@ export default function DomainPage() {
         e.preventDefault();
 
         if (searchedDomain) {
+            setLoading(true);
             const resDomains = await getDomains(searchedDomain);
             setCurrentDomains(resDomains);
             setIsWarningShow(true);
+            setLoading(false);
         }
     };
 

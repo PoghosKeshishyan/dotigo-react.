@@ -38,6 +38,28 @@
     color: #212121;
 }
 
+.CartList .order-list .order .left-side .controls {
+    font-weight: bold;
+    margin-left: 10px;
+    gap: 8px;
+    user-select: none;
+}
+
+.CartList .order-list .order .left-side .controls img {
+    width: 15px;
+    cursor: pointer;
+}
+
+.CartList .order-list .order .right-side {
+    gap: 8px;
+    align-items: center;
+}
+
+.CartList .order-list .order .right-side img {
+    width: 30px;
+    cursor: pointer;
+}
+
 .CartList .order-list .order .price {
     font-weight: 600;
     line-height: 140%;

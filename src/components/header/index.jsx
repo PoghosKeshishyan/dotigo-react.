@@ -3,7 +3,6 @@ import Logo from './Logo';
 import Navbar from './Navbar';
 import RightSide from './RightSide';
 import './header.css';
-import { Link } from 'react-router-dom';
 
 export default function Header({ headerData }) {
   const [navbarIsActive, setNavbarIsActive] = useState(false);
@@ -12,7 +11,6 @@ export default function Header({ headerData }) {
     <header>
       <div className="wrapper">
         <div className="row flex-between">
-          <Link to='/cart'>cart</Link>
           <Logo logo={headerData.logo} />
           <Navbar navbar={headerData.navbar} navbarIsActive={navbarIsActive} setNavbarIsActive={setNavbarIsActive} />
           <RightSide btns={headerData.btns} langs={headerData.langs} setNavbarIsActive={setNavbarIsActive} />

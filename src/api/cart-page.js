@@ -7,9 +7,9 @@ export const getCartPageData = async () => {
         const resCartPage = await axios.get(`cart/cart_page?lang=${DISPLAY_LANG}`);
 
         const registerDomainMessage = {
-            "en": "Registration for year",
-            "ru": "Регистрация на год",
-            "am": "Գրանցումը տարվա համար",
+            "en": "Registration for/year",
+            "ru": "Регистрация на/год",
+            "am": "Գրանցումը տարվա/համար",
         };
 
         return {

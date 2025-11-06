@@ -3,8 +3,11 @@ import { DISPLAY_LANG } from '../../config';
 import './CartList.css';
 
 export default function CartList({ 
-  orders, pagedata, increaseAmount, decreaseAmount, removeDomainFromCart, total 
+  orders, pagedata, changeYearFromDomain, removeDomainFromCart, total 
 }) {
+  const a = pagedata.registerDomainMessage[DISPLAY_LANG].split('/')[0];
+  const b = pagedata.registerDomainMessage[DISPLAY_LANG].split('/')[1];
+
   return (
     <div className="CartList">
 
@@ -24,19 +27,20 @@ export default function CartList({
               <div className='left-side'>
                 <h3>{elem.domain}</h3>
 
-                <div className="flex-center">
-                  <p>{pagedata.registerDomainMessage[DISPLAY_LANG]}</p>
-
-                  <div className="controls flex-center">
-                    <img src="/images/domains/minus.svg" alt="minus" onClick={() => decreaseAmount(elem.id)} />
-                    <span>{elem.number_of_years}</span>
-                    <img src="/images/domains/plus.svg" alt="plus" onClick={() => increaseAmount(elem.id)} />
-                  </div>
-                </div>
+                <select
+                  defaultValue={elem.number_of_years}
+                  onChange={(event) => changeYearFromDomain(elem.id, event.target.value)}
+                >
+                  <option value="1">{a} 1 {b}</option>
+                  <option value="2">{a} 2 {b}</option>
+                  <option value="3">{a} 3 {b}</option>
+                  <option value="4">{a} 4 {b}</option>
+                  <option value="5">{a} 5 {b}</option>
+                </select>
               </div>
 
               <div className="right-side flex-center">
-                <div className='price'>{elem.yearly_price} ֏</div>
+                <div className='price'>{elem.total_price} ֏</div>
                 <img src="/images/domains/trash.svg" alt="trash" onClick={() => removeDomainFromCart(elem.id)} />
               </div>
             </div>

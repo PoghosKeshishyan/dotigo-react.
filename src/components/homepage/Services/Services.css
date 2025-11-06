@@ -9,7 +9,7 @@
     line-height: 120%;
     letter-spacing: -0.01em;
     color: #212121;
-    width: 600px;
+    max-width: 600px;
 }
 
 .services .heading p {
@@ -17,7 +17,7 @@
     line-height: 140%;
     letter-spacing: 0.01em;
     color: rgba(33, 33, 33, 0.6);
-    width: 526px;
+    max-width: 526px;
 }
 
 .services .box-container {

@@ -14,6 +14,7 @@ import RegisterPage from './pages/RegisterPage';
 import CartPage from "./pages/CartPage";
 import Footer from "./components/footer";
 import axios from "./axios";
+import CartIcon from "./components/cart-page/CartIcon";
 
 export default function App() {
   const [headerData, setHeaderData] = useState(null);
@@ -54,6 +55,8 @@ export default function App() {
         </Routes>
       </main>
       
+      <CartIcon />
+
       {footerData && <Footer footerData={footerData} />}
     </div>
   )

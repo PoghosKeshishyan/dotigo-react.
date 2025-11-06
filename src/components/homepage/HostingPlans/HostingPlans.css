@@ -81,6 +81,7 @@
 .hosting-plans .plans {
     gap: 24px;
     margin-top: 75px;
+    overflow: hidden;
 
     &::-webkit-scrollbar {
         display: none;

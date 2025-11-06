@@ -1,0 +1,90 @@
+.CartIcon {
+    position: fixed;
+    top: 110px;
+    right: 100px;
+    border-radius: 50%;
+    padding: 27px 29px;
+    box-shadow: 0 4px 20px 0 rgba(25, 55, 186, 0.84);
+    background: #1937ba;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.CartIcon .amount {
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 80%;
+    letter-spacing: 0.01em;
+    color: #1937ba;
+    border-radius: 300px;
+    padding: 8px;
+    min-width: 26px;
+    height: 26px;
+    background: #fff;
+}
+
+.CartIcon.on-scroll {
+    top: 95px;
+    border-radius: 0 0 8px 8px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 121px;
+    height: 44px;
+    border: 1px solid #fff;
+}
+
+.CartIcon.on-scroll img {
+    width: 22px;
+}
+
+.CartIcon.on-scroll .amount {
+    position: static;
+}
+
+@media (max-width: 1200px) {
+    .CartIcon {
+        right: 50px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .CartIcon {
+        right: 20px;
+    }
+
+    .CartIcon.on-scroll {
+        top: 93px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .CartIcon {
+        padding: 15px 17px;
+    }
+
+    .CartIcon img {
+        width: 25px;
+    }
+
+    .CartIcon .amount {
+        font-size: 10px;
+        min-width: 15px;
+        height: 23px;
+    }
+
+    .CartIcon.on-scroll {
+        width: 110px;
+        padding: 0 12px;
+        height: 38px;
+    }
+
+    .CartIcon.on-scroll img {
+        width: 18px;
+    }
+}

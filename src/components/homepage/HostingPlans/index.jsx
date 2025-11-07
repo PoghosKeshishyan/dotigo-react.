@@ -1,4 +1,3 @@
-import { DISPLAY_LANG } from '../../../config';
 import './HostingPlans.css';
 
 export default function HostingPlans({ hostingPlansHeading, hostingPlans, billingType, setBillingType }) {
@@ -61,13 +60,7 @@ export default function HostingPlans({ hostingPlansHeading, hostingPlans, billin
               </p>
 
               <button href="#" className="btn">
-                {
-                  DISPLAY_LANG === 'en'
-                    ? 'Add to cart'
-                    : DISPLAY_LANG === 'ru'
-                      ? 'Добавить в корзину'
-                      : 'Ավելացնել զամբյուղում'
-                }
+                  {plan.btn_text}
               </button>
             </div>
           ))

@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  getKnowledgeBasePageData,
-  getKnowledgeBasePageHeading,
-} from "../api/knowledge-base-page";
-import "../stylesheets/knowledgeBasePage.css";
+import { getKnowledgeBasePageData, getKnowledgeBasePageHeading } from "../api/knowledge-base-page";
 import { DISPLAY_LANG } from "../config";
 import Loading from "../components/loading";
+import "../stylesheets/knowledgeBasePage.css";
 
 export function KnowledgeBasePage() {
   const [heading, setHeading] = useState(null);
@@ -18,15 +15,12 @@ export function KnowledgeBasePage() {
       try {
         const heading = await getKnowledgeBasePageHeading();
         setHeading(heading[0]);
-        console.log(heading);
 
         const baseData = await getKnowledgeBasePageData();
         setBaseData(baseData);
-        console.log(baseData);
+        setIsLoading(false);
       } catch (err) {
         console.error(err);
-      } finally {
-        setIsLoading(false);
       }
     };
 

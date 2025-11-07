@@ -70,9 +70,8 @@ export default function DomainPage() {
 
             {
                 currentDomains && 
-                currentDomains.length && 
-                currentDomains.filter(e => e.status === 'available').length !== 0 ? 
-                    <DomainList currentDomains={currentDomains} /> 
+                currentDomains.length ? 
+                    <DomainList currentDomains={currentDomains} pageData={pageData} /> 
                 : (
                     isWarningShow && <div className="no-domain-message">
                         {pageData.no_domain_messages[DISPLAY_LANG]}

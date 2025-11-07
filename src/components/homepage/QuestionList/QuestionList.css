@@ -75,6 +75,10 @@
 
 .questions-list .accordion-container .accordion-section .accordion-item {
     padding: 20px;
+
+    &:first-child {
+        padding-top: 0;
+    }
 }
 
 .questions-list .accordion-container .accordion-section .accordion-item .accordion-header {
@@ -119,7 +123,7 @@
         height: auto !important;
         border-bottom: 2px solid #D0D0D0;
         border-right: none;
-        width: 100%;
+        width: 100% !important;
         align-items: center;
         gap: 16px;
     }
@@ -127,7 +131,8 @@
     .questions-list .row .tabs .tab {
         margin-bottom: 0;
         padding: 12px 0;
-        font-size: 14px;
+        font-size: 13px;
+        word-break: break-all;
     }
 
     .questions-list .tabs .tab.active::after {
@@ -139,6 +144,7 @@
 
     .questions-list .accordion-container {
         width: 100%;
+        margin-top: 20px;
     }
 
     .questions-list .accordion-container .accordion-section .accordion-item {

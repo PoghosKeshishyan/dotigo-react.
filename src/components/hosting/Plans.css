@@ -20,7 +20,6 @@
 
 .plans .plan.active {
     background: #1937ba;
-    transform: translateY(-33px);
 }
 
 .plans .plan.active h3,

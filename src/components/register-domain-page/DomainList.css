@@ -13,6 +13,11 @@
     }
 }
 
+.domain-list .domain-item.registered {
+    padding: 30px 24px;
+    color: rgb(212, 4, 4);
+}
+
 .domain-list .domain-item .domain-title {
     font-family: var(--font-family);
     font-weight: 600;

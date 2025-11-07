@@ -1,6 +1,7 @@
 .services {
     margin-top: 50px !important;
     margin-bottom: 150px !important;
+    /* overflow: hidden; */
 }
 
 .services .heading h2 {
@@ -147,7 +148,7 @@
     .services .box-container .right-side img {
         width: 200px;
         bottom: -50px;
-        right: -30px;
+        right: -10px;
     }
 }
 
@@ -181,6 +182,12 @@
 @media (max-width: 800px) {
     .services .box-container .right-side p {
         width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .services .heading h2 {
+        font-size: 34px;
     }
 }
 

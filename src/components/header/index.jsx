@@ -12,8 +12,19 @@ export default function Header({ headerData }) {
       <div className="wrapper">
         <div className="row flex-between">
           <Logo logo={headerData.logo} />
-          <Navbar navbar={headerData.navbar} navbarIsActive={navbarIsActive} setNavbarIsActive={setNavbarIsActive} />
-          <RightSide btns={headerData.btns} langs={headerData.langs} setNavbarIsActive={setNavbarIsActive} />
+
+          <Navbar 
+            navbar={headerData.navbar} 
+            navbarIsActive={navbarIsActive} 
+            setNavbarIsActive={setNavbarIsActive}
+          />
+          
+          <RightSide 
+            btns={headerData.btns} 
+            langs={headerData.langs} 
+            navbarIsActive={navbarIsActive} 
+            setNavbarIsActive={setNavbarIsActive} 
+          />
         </div>
       </div>
     </header>

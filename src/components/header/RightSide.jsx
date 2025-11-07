@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { DISPLAY_LANG } from '../../config';
 import { Link, useNavigate } from "react-router-dom";
 
-export default function RightSide({ btns, langs, setNavbarIsActive }) {
+export default function RightSide({ btns, langs, navbarIsActive, setNavbarIsActive }) {
     const [showLangDropdown, setShowLangDropdown] = useState(false);
     const navigate = useNavigate();
     const langRef = useRef();
@@ -54,13 +54,13 @@ export default function RightSide({ btns, langs, setNavbarIsActive }) {
                 )}
             </div>
 
-            <div className="icons" onClick={() => navigate('/login')}>
-                <img src="/images/partials/auth-icon.svg" alt="auth" className="auth-icon" />
+            <div className="icons">
+                <img src="/images/partials/auth-icon.svg" alt="auth" className="auth-icon" onClick={() => navigate('/login')} />
 
                 <img 
                   alt="menubar" 
                   className="menubar-icon"
-                  src="/images/partials/menubar.svg" 
+                  src={navbarIsActive ? "/images/partials/xmark.svg" : "/images/partials/menubar.svg"}
                   onClick={() => setNavbarIsActive(prev => !prev)}
                 />
             </div>

@@ -44,7 +44,7 @@ export function KnowledgeBaseDetailPage() {
             <Link className="go_page" to={detailData.go_back_page}>
               {detailData.go_back_page_title}
             </Link>
-            <img src="/images/partials/mingcute_right-line.svg" alt="svg" />
+            <img src="/images/mingcute_right-line.svg" alt="svg" />
             <button className="go_section" onClick={onChange}>
               {detailData.go_back_section}
             </button>

@@ -1,6 +1,5 @@
 .intro {
     margin-top: 92px;
-    height: 349px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -15,10 +14,11 @@
 }
 
 .intro .row {
-    height: 349px;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
+    padding-top: 40px;
+    padding-bottom: 106px;
 }
 
 .intro .row .title h1 {
@@ -27,6 +27,7 @@
     line-height: 120%;
     letter-spacing: -0.01em;
     color: #212121;
+    width: 800px;
 }
 
 .intro .row .title p {
@@ -48,7 +49,6 @@
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 16px;
-    line-height: 140%;
     letter-spacing: 0.01em;
     color: rgba(33, 33, 33, 0.7);
 
@@ -76,43 +76,13 @@
 }
 
 /* ============ media queries ============ */
-@media (max-width: 1260px) {
-    .services .box-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .services .box-container .left-side,
-    .services .box-container .right-side {
-        width: 100%;
-    }
-
-    .services .box-container .left-side .box:nth-child(2),
-    .services .box-container .left-side .box:nth-child(3) {
-        width: 100%;
-    }
-
-    .services .box-container .left-side .box:first-child {
-        height: 273px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .services .box-container .right-side img {
-        width: 200px;
-        bottom: -50px;
-        right: -30px;
-    }
-}
-
 @media (max-width: 1000px) {
     .intro .row .title h1 {
         width: 500px;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
     .intro .row .title h1 {
         width: 400px;
     }
@@ -124,6 +94,10 @@
         align-items: normal;
     }
 
+    .intro .row .title p {
+        padding: 15px 0;
+    }
+
     .intro .row .search {
         display: flex;
         flex-direction: column-reverse;
@@ -131,16 +105,16 @@
 
     .intro .row .top-level-domains {
         margin-top: 0;
-        margin-bottom: 16px;
-    }
-
-    .intro .row .search form {
-        width: 100%;
+        margin-bottom: 15px;
     }
 
     .intro .row .search form input[type=search] {
         width: 100%;
-        margin-bottom: 1rem;
+    }
+
+    .intro .row .search form input[type=search] {
+        /* width: 100%; */
+        margin-bottom: 15px;
     }
 
     .intro .row .search form input[type=submit] {
@@ -149,22 +123,9 @@
 
 }
 
-@media (max-width: 800px) {
-    .intro {
-        height: 400px;
-    }
-
+@media (max-width: 600px) {
     .intro .row .title h1 {
         font-size: 34px;
-    }
-}
-
-@media (max-width: 450px) {
-    .intro {
-        height: 440px;
-    }
-
-    .intro .row .title h1 {
-        width: 250px;
+        width: 300px;
     }
 }

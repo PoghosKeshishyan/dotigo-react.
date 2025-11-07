@@ -37,7 +37,7 @@ export default function Navbar({ navbar, navbarIsActive, setNavbarIsActive }) {
                         key={item.id}
                         onClick={(e) => toggleDropdown(e, item.id, hasDropdown)}
                     >
-                        <NavLink to={item.link} onClick={() => setNavbarIsActive(false)}>
+                        <NavLink to={item.link} onClick={() => !hasDropdown && setNavbarIsActive(false)}>
                             {item.label}
                             {hasDropdown && <img src="/images/partials/arrow.svg" alt="arrow" />}
                         </NavLink>

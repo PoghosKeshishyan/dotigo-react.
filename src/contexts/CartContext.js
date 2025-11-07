@@ -7,14 +7,14 @@ export default function CartProvider({ children }) {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        const data = localStorage.getItem('orders');
+        const data = localStorage.getItem('cart-items');
         if (data) setOrders(JSON.parse(data))
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('orders', JSON.stringify(orders));
+        localStorage.setItem('cart-items', JSON.stringify(orders));
 
-        const total = orders.reduce((acc, elem) => acc + elem.yearly_price * elem.number_of_years, 0);
+        const total = orders.reduce((acc, elem) => acc + elem.total_price, 0);
         setTotal(total);
     }, [orders]);
 
@@ -45,7 +45,7 @@ export default function CartProvider({ children }) {
         const newOrders = orders.map(elem => {
             if (elem.id === id) {
                 elem.number_of_years = value;
-                elem.total_price = elem.yearly_price * value;
+                elem.total_price = Math.ceil(elem.yearly_price * value);
             }
 
             return elem;

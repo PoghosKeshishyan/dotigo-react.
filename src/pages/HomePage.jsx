@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { getHomePageData } from "../api/home-page";
 import { getHostingData } from "../api/global";
 import Loading from "../components/loading";
-import Intro from '../components/homepage/Intro/';
-import Services from "../components/homepage/Services/";
-import Map from "../components/homepage/Map/";
-import HostingPlans from "../components/homepage/HostingPlans/";
-import QuestionList from "../components/homepage/QuestionList/";
-import RegisterBanner from "../components/homepage/RegisterBanner/";
-import HelpCenter from '../components/homepage/HelpCenter/';
+import Intro from '../components/home-page/Intro/';
+import Services from "../components/home-page/Services/";
+import Map from "../components/home-page/Map/";
+import HostingPlans from "../components/home-page/HostingPlans/";
+import QuestionList from "../components/home-page/QuestionList/";
+import RegisterBanner from "../components/home-page/RegisterBanner/";
+import HelpCenter from '../components/home-page/HelpCenter/';
 
 export default function HomePage() {
     const [loading, setLoading] = useState(true);

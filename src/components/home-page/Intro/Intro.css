@@ -113,7 +113,6 @@
     }
 
     .intro .row .search form input[type=search] {
-        /* width: 100%; */
         margin-bottom: 15px;
     }
 
@@ -127,5 +126,11 @@
     .intro .row .title h1 {
         font-size: 34px;
         width: 300px;
+    }
+}
+
+@media (max-width: 408px) {
+    .intro .row .title h1 {
+        width: 280px;
     }
 }

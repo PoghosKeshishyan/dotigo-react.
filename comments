@@ -1,5 +1,4 @@
 lezvi kox@ lini VALYUTAN poxelu dasht@
-nayel ho componentneri mej data chka, bolor dataner@ petqa a linen API folderum
 navbari hertakanutyun@ dzel
 astx --> register page --> show input image
 
@@ -7,9 +6,13 @@ es GNER@ kloracnum em depi verev karzinkayi, bayc BEQENDUM DA CHI PAHVUM
 
 DOMAINNERI GNERI ketic heto cuyc ta ??? 2 tiv ??? te voch
 
-ARTAK@ BTN URL I MEJI API MEJ CHI DREL BTN_TEXT
+headeri datan galis e APP ic - API folderi mej chka
 
+
+header ---> index.jsx ---> currencyList ---> artak@ tox dni bequm
 
 ================== MEDIANERI STUGUM --- micnhev  340 arel em ===================
 
 home pagei 3 lezunerov median avartecim 
+domains pagei 3 lezunerov median avartecim 
+hosting pagei 3 lezunerov median avartecim 

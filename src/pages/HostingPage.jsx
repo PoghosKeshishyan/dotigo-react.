@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { getHostingPageData } from '../api/hosint-page';
 import { getHostingData } from "../api/global";
 import Loading from '../components/loading';
-import Heading from '../components/hosting/Heading';
-import Plans from '../components/hosting/Plans';
-import QuestionList from '../components/hosting/QuestionList';
+import Heading from '../components/hosting-page/Heading';
+import Plans from '../components/hosting-page/Plans';
+import QuestionList from '../components/hosting-page/QuestionList';
 import '../stylesheets/hosting.css';
 
 export default function HostingPage() {

@@ -1,4 +1,10 @@
 .HostingPage {
-    margin-top: 142px !important;
+    margin-top: 150px !important;
     margin-bottom: 88px !important;
+}
+
+@media (max-width: 500px) {
+    .HostingPage {
+        margin-top: 120px !important;
+    }
 }

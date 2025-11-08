@@ -24,9 +24,7 @@ export default function DomainList({ currentDomains, pageData }) {
             <p className="domain-title">{elem.domain}</p>
 
             <div className="buy flex-center">
-              <div className="price-box">
-                <span className="price">{elem.yearly_price} ֏</span>
-              </div>
+              <span className="price">{elem.yearly_price} ֏</span>
 
               <img
                 src={
@@ -43,7 +41,7 @@ export default function DomainList({ currentDomains, pageData }) {
         )
         :
         (
-          <div key={idx} className='domain-item registered 30*24'> 
+          <div key={idx} className='domain-item registered'>
             <p className="domain-title">
               {elem.domain} ({pageData.registeredDomainMessage[DISPLAY_LANG]})
             </p>

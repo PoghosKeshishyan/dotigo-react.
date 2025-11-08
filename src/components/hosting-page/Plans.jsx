@@ -1,4 +1,3 @@
-import { DISPLAY_LANG } from '../../config';
 import './Plans.css';
 
 export default function Plans({ plans }) {
@@ -41,15 +40,9 @@ export default function Plans({ plans }) {
                                 {plan.price} <span>{plan.billing}</span>
                             </p>
 
-                            <a href="#" className="btn">
-                                {
-                                    DISPLAY_LANG === 'en'
-                                        ? 'Choose Plan'
-                                        : DISPLAY_LANG === 'ru'
-                                            ? 'Выбрать план'
-                                            : 'Ընտրեք Փաթեթը'
-                                }
-                            </a>
+                            <button href="#" className="btn">
+                                {plan.btn_text}
+                            </button>
                         </div>
                     ))
                 }

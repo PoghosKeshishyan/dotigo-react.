@@ -30,16 +30,7 @@
     gap: 32px;
 }
 
-.domain-list .domain-item .buy .price-box .old-price {
-    font-family: var(--font-family);
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    text-decoration: line-through;
-    opacity: 0.5;
-    margin-right: 8px;
-}
-
-.domain-list .domain-item .buy .price-box .price {
+.domain-list .domain-item .buy .price {
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 18px;
@@ -53,11 +44,20 @@
 
     .domain-list .domain-item .domain-title,
     .domain-list .domain-item .buy .price-box .price {
-
         font-size: 16px;
     }
 
-    .domain-list .domain-item .buy .price-box .old-price {
-        font-size: 14px;
+    .domain-list .domain-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .domain-list .domain-item:not(.registered) .domain-title {
+        font-weight: 800;
+    }
+
+    .domain-list .domain-item .buy {
+        justify-content: space-between;
+        width: 100%;
     }
 }

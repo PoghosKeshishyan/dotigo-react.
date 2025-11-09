@@ -88,3 +88,9 @@
         width: 18px;
     }
 }
+
+@media (max-width: 370px) {
+    .CartIcon.on-scroll {
+        top: 100px !important;
+    }
+}

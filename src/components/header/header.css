@@ -62,6 +62,10 @@ header .navbar .dropdown li a {
     color: #000;
 }
 
+header .right-side {
+    gap: 20px;
+}
+
 header .account-buttons {
     gap: 12px;
 }
@@ -91,7 +95,6 @@ header .account-buttons .btn:last-child {
 header .change-lang {
     position: relative;
     user-select: none;
-    margin-left: 20px;
 }
 
 header .change-lang .selected-lang {
@@ -112,7 +115,6 @@ header .change-lang .lang-dropdown {
     transform: translateX(-50%);
     border-radius: 8px;
     padding: 12px 16px;
-    width: 91px;
     background: #f2f3fb;
 }
 
@@ -135,12 +137,72 @@ header .change-lang .lang-dropdown .lang-option a {
     color: #212121;
 }
 
+
+/* =================== change currency ================= */
+header .change-currency {
+    position: relative;
+    user-select: none;
+}
+
+header .change-currency .selected-currency {
+    gap: 4px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #212121;
+    cursor: pointer;
+    padding: 13px 0;
+}
+
+header .change-currency .selected-currency span {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+header .change-currency .currency-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    padding: 12px 16px;
+    background: #f2f3fb;
+}
+
+header .change-currency .flag-arrow.rotate {
+    rotate: 180deg;
+}
+
+header .change-currency .currency-dropdown .currency-option {
+    gap: 8px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+header .change-currency .currency-dropdown .currency-option span {
+    padding: 2px 5px;
+    color: #212121;
+    border-radius: 5px;
+}
+
+header .change-currency .currency-dropdown .currency-option span.active {
+    background: #fff;
+}
+
+/* =================== end change currency ================= */
+
 header .icons {
     display: none;
 }
 
 header .icons img {
-    margin-left: 20px;
     cursor: pointer;
     width: 24px;
 }
@@ -152,8 +214,8 @@ header .icons img {
     }
 
     header .icons {
-        display: initial;
-        margin-top: 3.5px;
+        display: flex;
+        gap: 20px;
     }
 
     header .navbar {
@@ -217,14 +279,69 @@ header .icons img {
     }
 }
 
+@media (max-width: 600px) {
+    header .logo img {
+        width: 140px;
+    }
+
+    header .right-side {
+        gap: 10px;
+    }
+}
+
 @media (max-width: 470px) {
     header .logo img {
         width: 127px;
     }
+
+    /* lang dropdown */
+    header .change-lang .selected-lang img {
+        width: 18px;
+    }
+
+    header .change-lang .selected-lang span {
+        font-size: 14px;
+    }
+
+    header .change-lang .selected-lang img {
+        width: 14px;
+    }
+
+    header .change-lang .lang-dropdown .lang-option img {
+        width: 18px;
+    }
+
+    header .change-lang .lang-dropdown .lang-option a {
+        font-size: 14px;
+    }
+
+    /* currency dropdown */
+    header .change-currency .selected-currency span {
+        font-size: 14px;
+        width: 40px;
+    }
+
+    header .change-currency .selected-currency .flag-arrow {
+        width: 14px;
+    }
+
+    /* auth icon */
+    header .icons {
+        gap: 14px;
+    }
+
+    header .icons img {
+        width: 20px;
+    }
 }
 
-@media (max-width: 360px) {
-    header .icons img {
-        margin-left: 10px;
+@media (max-width: 370px) {
+    header {
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+
+    header .row {
+        flex-direction: column;
     }
 }

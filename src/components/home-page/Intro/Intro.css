@@ -109,11 +109,8 @@
     }
 
     .intro .row .search form input[type=search] {
-        width: 100%;
-    }
-
-    .intro .row .search form input[type=search] {
         margin-bottom: 15px;
+        width: 100%;
     }
 
     .intro .row .search form input[type=submit] {
@@ -126,6 +123,10 @@
     .intro .row .title h1 {
         font-size: 34px;
         width: 300px;
+    }
+
+    .intro .row .search form input[type=search] {
+        padding: 14px;
     }
 }
 

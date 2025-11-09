@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import { CurrencyContext } from "../../contexts/CurrencyContext";
 import { DISPLAY_LANG } from "../../config";
 import './DomainList.css';
 
 export default function DomainList({ currentDomains, pageData }) {
   const [cartStatus, setCartStatus] = useState({});
   const { addDomainToCart } = useContext(CartContext);
+  const { selectedCurrency } = useContext(CurrencyContext);
 
   const toggleCart = (elem) => {
     setCartStatus((prev) => ({
@@ -24,7 +26,11 @@ export default function DomainList({ currentDomains, pageData }) {
             <p className="domain-title">{elem.domain}</p>
 
             <div className="buy flex-center">
-              <span className="price">{elem.yearly_price} ֏</span>
+              <span className="price">
+                {selectedCurrency.symbol === '$' && selectedCurrency.symbol+' '}
+                {elem.yearly_price}
+                {selectedCurrency.symbol !== '$' && ' '+selectedCurrency.symbol}
+              </span>
 
               <img
                 src={

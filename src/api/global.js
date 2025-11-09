@@ -19,7 +19,9 @@ export const getTopLevelDomains = async () => {
     }
 };
 
-export const getDomains = async (title) => {
+/* ================ domains api ================ */
+
+export const getDomains = async (title, currency) => {
     try {
         const lastDot = title.lastIndexOf('.');
 
@@ -34,8 +36,8 @@ export const getDomains = async (title) => {
                   ...
             */
 
-            const response = await axios.get('domain/get_domain?domain='+title);
-            const result = response.data.results.map((elem, i) => {return {...elem, id: Date.now() + i}});
+            const response = await axios.get(`domain/get_domain?domain=${title}&currency=${currency}`);
+            const result = response.data.results.map((elem, i) => { return { ...elem, id: Date.now() + i } });
             return result;
         } else {
             /** 
@@ -49,15 +51,47 @@ export const getDomains = async (title) => {
             let domain_name = title.split('.').slice(0, -1).join('.');
 
             let arr = title.split('.');
-            let last = arr[arr.length-1];
+            let last = arr[arr.length - 1];
             let query = last = '&tlds=' + last;
 
-            const response = await axios.get(`domain/get_domain?domain=${domain_name}${query}`);
+            const response = await axios.get(`domain/get_domain?domain=${domain_name}${query}&currency=${currency}`);
             response.data.results[0].id = Date.now();
             return response.data.results;
         }
-        
+
     } catch (error) {
         console.log(error);
     }
+};
+
+export const registerDomain = async (orders) => {
+    /**======================================================
+     @description 
+     ays funkcian petqa a ashxati VCHARUMIC HETO 
+     ========================================================
+    */
+
+    const domains = orders.filter(elem => elem.type === 'domain');
+    let responses = [];
+
+    for (let i = 0; i < domains.length; i++) {
+        const body = {
+            domain_name: domains[i].domain,
+            years: domains[i].number_of_years,
+            customer_id: "32329513",
+            contact_id: "131935043",
+        }
+        
+        const response = await axios.post('domain/register_domain', body);
+        responses.push(response.data);
+    }
+
+    localStorage.setItem('REGISTERED-DOMAINS', JSON.stringify(responses));
+};
+
+const payDomain = async () => {
+    const registeredDomains = JSON.parse(localStorage.getItem('REGISTERED-DOMAINS'));
+
+
+
 };

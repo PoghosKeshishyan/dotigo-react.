@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CurrencyContext } from "../contexts/CurrencyContext";
 import { DISPLAY_LANG } from '../config';
 import { getDomainPageData } from '../api/domain-page';
 import { getDomains } from "../api/global";
@@ -8,6 +9,7 @@ import DomainList from "../components/domain-page/DomainList";
 import '../stylesheets/domain.css';
 
 export default function DomainPage() {
+    const { selectedCurrency } = useContext(CurrencyContext);
     const [loading, setLoading] = useState(true);
     const [pageData, setPageData] = useState(null);
     const [currentDomains, setCurrentDomains] = useState(null);
@@ -20,7 +22,7 @@ export default function DomainPage() {
             setPageData(resPageData);
 
             if (searchedDomain) {
-                const resDomains = await getDomains(searchedDomain);
+                const resDomains = await getDomains(searchedDomain, selectedCurrency?.title);
                 setCurrentDomains(resDomains);
             }
 
@@ -29,7 +31,7 @@ export default function DomainPage() {
 
         loadingData();
         window.scrollTo(0, 0);
-    }, []);
+    }, [selectedCurrency]);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -37,7 +39,7 @@ export default function DomainPage() {
         if (searchedDomain) {
             setLoading(true);
 
-            const resDomains = await getDomains(searchedDomain);
+            const resDomains = await getDomains(searchedDomain, selectedCurrency?.title);
             setCurrentDomains(resDomains);
 
             setIsWarningShow(true);
@@ -45,7 +47,7 @@ export default function DomainPage() {
         }
     };
 
-    if (loading) {
+    if (loading || !selectedCurrency) {
         return <Loading />;
     }
 

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { DISPLAY_LANG } from '../../config';
+import { registerDomain } from '../../api/global';
 import './CartList.css';
 
-export default function CartList({ 
-  orders, pagedata, changeYearFromDomain, removeDomainFromCart, total 
+export default function CartList({
+  orders, pagedata, changeYearFromDomain, removeDomainFromCart, total
 }) {
   const a = pagedata.registerDomainMessage[DISPLAY_LANG].split('/')[0];
   const b = pagedata.registerDomainMessage[DISPLAY_LANG].split('/')[1];
@@ -54,7 +55,9 @@ export default function CartList({
           <p>{total} ֏</p>
         </div>
 
-        <button className='btn'>{pagedata.btn_text}</button>
+        <button className='btn pay-btn' onClick={() => registerDomain(orders)}>
+          {pagedata.btn_text}
+        </button>
       </div>
 
     </div>

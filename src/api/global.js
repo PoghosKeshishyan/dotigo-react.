@@ -64,12 +64,13 @@ export const getDomains = async (title, currency) => {
     }
 };
 
-export const registerDomain = async (orders) => {
+export const registerDomain = async (orders, setOrders, setShowLoading) => {
     /**======================================================
      @description 
      ays funkcian petqa a ashxati VCHARUMIC HETO 
      ========================================================
     */
+    setShowLoading(true);
 
     const domains = orders.filter(elem => elem.type === 'domain');
     let responses = [];
@@ -82,16 +83,19 @@ export const registerDomain = async (orders) => {
             contact_id: "131935043",
         }
         
+        console.log(body);
+        
         const response = await axios.post('domain/register_domain', body);
         responses.push(response.data);
+
+        // petq a klienbtin verjnakan patasxan tanq, te inq@ vor domein@ gnec
+        // erb exav error, verjnakan mi hat ALERT cuyc tanq klientin
     }
 
+    console.log(responses);
+    setShowLoading(false);
     localStorage.setItem('REGISTERED-DOMAINS', JSON.stringify(responses));
-};
 
-const payDomain = async () => {
-    const registeredDomains = JSON.parse(localStorage.getItem('REGISTERED-DOMAINS'));
-
-
-
+    const newOrders = orders.filter(elem => elem.type !== 'domain');
+    setOrders(newOrders);
 };

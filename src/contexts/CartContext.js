@@ -56,7 +56,7 @@ export default function CartProvider({ children }) {
 
     return (
         <CartContext.Provider value={{
-            orders, addDomainToCart, removeDomainFromCart, changeYearFromDomain, total
+            orders, setOrders, addDomainToCart, removeDomainFromCart, changeYearFromDomain, total
         }}>
             {children}
         </CartContext.Provider>

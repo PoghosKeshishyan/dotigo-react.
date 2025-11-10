@@ -8,7 +8,7 @@ import '../stylesheets/cart.css';
 
 export default function CartPage() {
     const { 
-        orders, changeYearFromDomain, removeDomainFromCart, total 
+        orders, setOrders, changeYearFromDomain, removeDomainFromCart, total 
     } = useContext(CartContext);
     
     const [loading, setLoading] = useState(true);
@@ -39,6 +39,7 @@ export default function CartPage() {
                 {cartPageData && !!orders.length && (
                     <CartList 
                       orders={orders} 
+                      setOrders={setOrders}
                       pagedata={cartPageData} 
                       changeYearFromDomain={changeYearFromDomain}
                       removeDomainFromCart={removeDomainFromCart}

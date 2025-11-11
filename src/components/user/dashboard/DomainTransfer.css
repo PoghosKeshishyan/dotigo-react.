@@ -1,0 +1,108 @@
+.DomainTransfer h2 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #212121;
+    padding-bottom: 16px;
+}
+
+.DomainTransfer .domain_transfer_descr {
+    font-family: var(--font-family);
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #000;
+    padding-bottom: 42px;
+}
+
+.DomainTransfer .transfer-form label {
+    padding-bottom: 8px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+}
+
+.DomainTransfer .transfer-form #transfer-input {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 14px;
+    width: 395px;
+    height: 50px;
+    margin: 10px 0;
+    line-height: 140%;
+    font-size: 16px;
+}
+
+.DomainTransfer .transfer-form input[type=submit] {
+    border-radius: 8px;
+    padding: 14px 26px;
+    background: #1937ba;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #fff;
+    margin-left: 8px;
+}
+
+.DomainTransfer .confirm_text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.DomainTransfer .confirm_text p {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #059f00;
+    width: 400px;
+}
+
+/* ============ media queries ============ */
+@media (max-width: 980px) {
+    .DomainTransfer h2 {
+        font-size: 24px;
+    }
+
+    .DomainTransfer .transfer-form #transfer-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .DomainTransfer {
+        width: 96%;
+        margin: auto;
+    }
+
+    .DomainTransfer .domain_transfer_descr,
+    .DomainTransfer .transfer-form label {
+        font-size: 14px;
+        padding-bottom: 22px;
+    }
+
+    .DomainTransfer .transfer-form .flex-center {
+        flex-wrap: wrap;
+    }
+
+    .DomainTransfer .transfer-form input {
+        width: 100%;
+    }
+
+    .DomainTransfer .transfer-form input[type=submit] {
+        margin-left: 0;
+    }
+
+    .DomainTransfer .confirm_text p {
+        font-size: 14px;
+    }
+}

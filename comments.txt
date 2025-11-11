@@ -16,6 +16,11 @@ karzinkai CURRENCY nern el tox lini 4 VALYUTANEROV
 
 
 
+odi mej a mnum --> header i isLoggedIn && <div className='account-data flex-center'>
+median, mediai jamanak chem haskanum te inch@ toxem, inch@ jnjem
+
+
+
 erb vor AKAUNTI logikan patrast lini, ARTAKIN HISACNEL
 ete mard@ avtoriazacia exac lini u inch vor domain poisk ta,
 petq a gri vor et domain@ duq dzer akantum

@@ -92,6 +92,51 @@ header .account-buttons .btn:last-child {
     color: #fff;
 }
 
+header .right-side .account-data {
+    gap: 20px;
+}
+
+header .right-side .account-data .account-balance {
+    border: 1.20px solid rgba(33, 33, 33, 0.3);
+    border-radius: 8px;
+    padding: 14px;
+    width: 121px;
+    height: 50px;
+    background: #fff;
+    position: relative;
+}
+
+header .right-side .account-data .account-balance span {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #1937ba;
+    position: absolute;
+    top: -8.5px;
+    background: white;
+    padding: 0 4px;
+}
+
+header .right-side .account-data .account-settings {
+    gap: 15px;
+    cursor: pointer;
+}
+
+header .right-side .account-data .account-settings .arrow {
+    rotate: 90deg;
+}
+
+header .right-side .account-data .account-balance .balance {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #212121;
+}
+
 header .change-lang {
     position: relative;
     user-select: none;

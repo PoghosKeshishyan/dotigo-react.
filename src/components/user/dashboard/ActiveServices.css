@@ -1,0 +1,65 @@
+.ActiveServices .heading {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #212121;
+    padding-bottom: 40px;
+}
+
+.ActiveServices .active-services-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 84px;
+}
+
+.ActiveServices .active-services-list a {
+    border-radius: 8px;
+    padding: 25px 33px;
+    flex: 1;
+    height: 72px;
+    background: #f2f3fb;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #000;
+}
+
+/* ============ media queries ============ */
+@media (max-width: 980px) {
+    .ActiveServices .heading {
+        font-size: 30px;
+    }
+
+    .ActiveServices .active-services-list {
+        flex-wrap: wrap;
+    }
+
+    .ActiveServices .active-services-list a {
+        padding: 25px 15px;
+        flex: 18rem;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 650px) {
+    .ActiveServices {
+        width: 96%;
+        margin: auto;
+    }
+
+    .ActiveServices .active-services-list a {
+        flex: 20rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .ActiveServices .heading {
+        width: 70%;
+    }
+}

@@ -93,8 +93,8 @@ export default function RegisterPage() {
                       <img
                         src={
                           showPassword
-                            ? "/images/eye-regular-full.svg"
-                            : "/images/eye-slash-regular-full.svg"
+                            ? "/images/users/eye-regular-full.svg"
+                            : "/images/users/eye-slash-regular-full.svg"
                         }
                         alt="toggle password"
                         className="eye_icon"

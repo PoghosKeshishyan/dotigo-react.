@@ -15,6 +15,7 @@ import CartPage from "./pages/CartPage";
 import Footer from "./components/footer";
 import axios from "./axios";
 import CartIcon from "./components/cart-page/CartIcon";
+import UserDashboard from "./pages/user/UserDashboard";
 
 export default function App() {
   const [headerData, setHeaderData] = useState(null);
@@ -52,6 +53,10 @@ export default function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/cart" element={<CartPage />} />
+
+          <Route path="/user">
+            <Route index element={<UserDashboard />} />
+          </Route>
         </Routes>
       </main>
       
